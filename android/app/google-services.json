@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "125108696343",
+    "firebase_url": "https://urbanoware-cb53e-default-rtdb.firebaseio.com",
+    "project_id": "urbanoware-cb53e",
+    "storage_bucket": "urbanoware-cb53e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125108696343:android:be2affea700d052423f352",
+        "android_client_info": {
+          "package_name": "com.andrella.UrbanoWareApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125108696343-5335vrug0hua2m3enk9p3g9aeulfmflp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuMYro4RGeYoHdRcTdNzSDXD6MNQXL610"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125108696343-5335vrug0hua2m3enk9p3g9aeulfmflp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125108696343:android:37872d372545d68e23f352",
+        "android_client_info": {
+          "package_name": "com.andrella.UrbanoWareCity_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125108696343-5335vrug0hua2m3enk9p3g9aeulfmflp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuMYro4RGeYoHdRcTdNzSDXD6MNQXL610"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125108696343-5335vrug0hua2m3enk9p3g9aeulfmflp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
