@@ -1,16 +1,33 @@
-# UrbanoWareCity_app
+# UrbanoWareCity App
 
-A new Flutter project.
+Aplicativo desenvolvido para cidades inteligentes que permite os usuários obterem informações sobre índices de conforto urbano por meio de nós sensores sem fio e outros elementos de IoT espalhados pela cidade, habilitando a coleta de diversos parâmetros.
 
 ## Getting Started
+O aplicativo ainda é um protótipo, mas pode ser testado seguindo o seguinte passo a passo:
 
-This project is a starting point for a Flutter application.
+### Pré-Requisitos 
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: .[Git](https://git-scm.com/), [Flutter](https://flutter.dev/), [Android Studio](https://developer.android.com/studio), Além disso é bom ter um editor para trabalhar com o código como .[VScode](https://code.visualstudio.com/).
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Clone este repositório
+$ git clone git@github.com:andrella30/AppUrbanoWare.git
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Vá para a pasta do projeto
+$ cd AppUrbanoWare
+
+### No terminal execute o seguinte comando
+$ flutter pub get
+
+### Na tela de login utilizar o seguinte email e senha
+email: user@user.com
+senha: 102030.
+
+### 🛠 Ferramentas
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Flutter](https://flutter.dev/)
+- [Android Studio](https://developer.android.com/studio),
+- [Firebase](https://firebase.google.com/?hl=pt-br), 
+- [VScode](https://code.visualstudio.com/)
+
