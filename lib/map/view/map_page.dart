@@ -71,7 +71,9 @@ class _MapPageState extends State<MapPage> {
           ),
         ],
       ),
-      body: FutureBuilder(
+      body: 
+       controller.temperatura != null ?
+      FutureBuilder(
         future: Future.delayed(Duration(seconds: 2)),
         builder: (context, snapshot) {
           return LayoutBuilder(
@@ -80,7 +82,7 @@ class _MapPageState extends State<MapPage> {
                 children: <Widget>[
                   Observer(
                     builder: (_) {
-                      return Container(
+                      return   Container(
                         child: GoogleMap(
                           onMapCreated: _onMapCreated,
                           onCameraMove: (data) {
@@ -101,22 +103,21 @@ class _MapPageState extends State<MapPage> {
                           zoomControlsEnabled: false,
                           polylines: controller.polylines,
                         ),
-                      );
+                      ); 
                     },
                   ),
-
+                  
                   ListBottomWidget(
                     constraints: constraints,
                   )
-                  // ListBottomWidget(
-                  //   constraints: constraints,
-                  // )
+                  
+
                 ],
               );
             },
           );
         },
-      ),
+      ) : Center(child: Text("Usuario sem sensor pessoal")),
     );
   }
 }

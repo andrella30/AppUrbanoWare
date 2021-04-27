@@ -22,7 +22,7 @@ class AirQualityCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      height: constraints.maxHeight * .2,
+      height: constraints.maxHeight * .22,
       width: constraints.maxWidth * .4,
       child: Card(
         shape: RoundedRectangleBorder(

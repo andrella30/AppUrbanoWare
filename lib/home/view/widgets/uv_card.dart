@@ -1,7 +1,5 @@
-import 'package:UrbanoWareCity_app/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:get_it/get_it.dart';
 
 class UvCard extends StatelessWidget {
   final BoxConstraints constraints;
@@ -13,7 +11,7 @@ class UvCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      height: constraints.maxHeight * .2,
+      height: constraints.maxHeight * .22,
       width: constraints.maxWidth * .4,
       child: Card(
         shape: RoundedRectangleBorder(
@@ -118,11 +116,11 @@ class UvCard extends StatelessWidget {
     AlertDialog alert = AlertDialog(
       title: Text("Índice UV"),
       content: Container(
-        width: 400,
+       
         height: 400,
         child: Column(
           children: [
-            cardIndice(context, " 0 - 1 ", "  Não é necessário proteção"),
+            cardIndice(context, " 0 - 1 ", " Não é necessário proteção"),
             cardIndice(context, " 2 - 5 ", "  Filtro solar e óculos de sol"),
             cardIndice(context, " 6 - 7 ",
                 "  Utilizar óculos, protetor\n  solar com filtro UV, chapéu"),
@@ -149,7 +147,7 @@ class UvCard extends StatelessWidget {
 
 Widget cardIndice(BuildContext context, String indice, String text) {
   return Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding: const EdgeInsets.only( bottom: 8),
     child: Container(
       height: 50,
       width: 280,
@@ -160,14 +158,17 @@ Widget cardIndice(BuildContext context, String indice, String text) {
       child: Row(
         children: [
           Text(
+            
             indice,
             style: TextStyle(
+              fontSize: 12,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             text,
             style: TextStyle(
+              fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
           ),

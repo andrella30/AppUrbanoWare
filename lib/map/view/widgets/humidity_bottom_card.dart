@@ -30,13 +30,13 @@ class HumidityBottomCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10),
+            padding: EdgeInsets.only(top: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  height: 40,
-                  width: 40,
+                  height: 30,
+                  width: 30,
                   child: Image.asset("assets/humidity.png"),
                 ),
                 SizedBox(

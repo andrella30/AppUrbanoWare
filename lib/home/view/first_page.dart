@@ -7,7 +7,9 @@ import 'package:UrbanoWareCity_app/home/view/widgets/umidade_card.dart';
 import 'package:UrbanoWareCity_app/home/view/widgets/uv_card.dart';
 import 'package:UrbanoWareCity_app/map/controller/sensor_user_controller.dart';
 import 'package:UrbanoWareCity_app/map/repositories/sensor_user_repository.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get_it/get_it.dart';
 
@@ -20,6 +22,7 @@ class _FirstPageState extends State<FirstPage> {
   final controller = GetIt.I.get<HomeController>();
   final controllerMap = GetIt.I.get<SensorUserController>();
   SensorUserRepository repository = SensorUserRepository();
+
   @override
   void initState() {
     controller.loadSensors();
@@ -28,11 +31,9 @@ class _FirstPageState extends State<FirstPage> {
   }
 
   Future<void> _reloadPage() async {
-    await Future.delayed(Duration(seconds: 1), () {
-      setState(() {
-        controller.loadSensors();
-        controllerMap.loadSensoruser();
-      });
+    await Future.delayed(Duration(seconds: 2), () {
+      controller.loadSensors();
+      controllerMap.loadSensoruser();
     });
   }
 
@@ -40,7 +41,7 @@ class _FirstPageState extends State<FirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
-        future: Future.delayed(Duration(seconds: 2)),
+        future: Firebase.initializeApp(),
         builder: (context, snapshot) {
           return LayoutBuilder(
             builder: (context, constraints) {
@@ -57,81 +58,83 @@ class _FirstPageState extends State<FirstPage> {
                             reloadPage: _reloadPage,
                           ),
                           Padding(
-                            padding: EdgeInsets.only(
-                                top: constraints.maxHeight * 0.2),
-                            child: RefreshIndicator(
-                              onRefresh: _reloadPage,
-                              child: Padding(
-                                padding: EdgeInsets.only(
-                                  left: constraints.maxWidth * 0.08,
-                                  right: constraints.maxWidth * 0.08,
-                                ),
-                                child: ListView(
-                                  physics: BouncingScrollPhysics(),
-                                  children: [
-                                    AnimationLimiter(
-                                        child: Column(
-                                      children: AnimationConfiguration
-                                          .toStaggeredList(
-                                        duration:
-                                            const Duration(milliseconds: 375),
-                                        childAnimationBuilder: (widget) =>
-                                            SlideAnimation(
-                                          horizontalOffset: 50.0,
-                                          child: FadeInAnimation(
-                                            child: widget,
-                                          ),
-                                        ),
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                              padding: EdgeInsets.only(
+                                  top: constraints.maxHeight * 0.2),
+                              child: RefreshIndicator(
+                                onRefresh: _reloadPage,
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                    left: constraints.maxWidth * 0.08,
+                                    right: constraints.maxWidth * 0.08,
+                                  ),
+                                  child: Observer(builder: (_) {
+                                    return ListView(
+                                      physics: BouncingScrollPhysics(),
+                                      children: [
+                                        AnimationLimiter(
+                                            child: Column(
+                                          children: AnimationConfiguration
+                                              .toStaggeredList(
+                                            duration: const Duration(
+                                                milliseconds: 375),
+                                            childAnimationBuilder: (widget) =>
+                                                SlideAnimation(
+                                              horizontalOffset: 50.0,
+                                              child: FadeInAnimation(
+                                                child: widget,
+                                              ),
+                                            ),
                                             children: [
-                                              TemperaturaCard(
-                                                constraints: constraints,
-                                                temperatura: controller
-                                                    .temperaturaGlobal,
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  TemperaturaCard(
+                                                    constraints: constraints,
+                                                    temperatura: controller
+                                                        .temperaturaGlobal,
+                                                  ),
+                                                  AirQualityCard(
+                                                    constraints: constraints,
+                                                    qualidadeAr: controller
+                                                        .qualidadeArGlobal,
+                                                    co: controller.co,
+                                                    co2: controller.co2,
+                                                    nh4: controller.nh4,
+                                                    tolueno: controller.tolueno,
+                                                  ),
+                                                ],
                                               ),
-                                              AirQualityCard(
-                                                constraints: constraints,
-                                                qualidadeAr: controller
-                                                    .qualidadeArGlobal,
-                                                co: controller.co,
-                                                co2: controller.co2,
-                                                nh4: controller.nh4,
-                                                tolueno: controller.tolueno,
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  UmidadeCard(
+                                                    constraints: constraints,
+                                                    umidade: controller
+                                                        .umidadeGlobal,
+                                                  ),
+                                                  UvCard(
+                                                    constraints: constraints,
+                                                    indiceUv: controller
+                                                        .indiceUvGlobal
+                                                        .toInt(),
+                                                  )
+                                                ],
                                               ),
-                                            ],
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              UmidadeCard(
+                                              MapCard(
                                                 constraints: constraints,
-                                                umidade:
-                                                    controller.umidadeGlobal,
-                                              ),
-                                              UvCard(
-                                                constraints: constraints,
-                                                indiceUv: controller
-                                                    .indiceUvGlobal
-                                                    .toInt(),
                                               )
                                             ],
                                           ),
-                                          MapCard(
-                                            constraints: constraints,
-                              
-                                          )
-                                        ],
-                                      ),
-                                    ))
-                                  ],
+                                        ))
+                                      ],
+                                    );
+                                  }),
                                 ),
-                              ),
-                            ),
-                          )
+                              ))
                         ],
                       ),
                     )

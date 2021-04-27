@@ -166,7 +166,7 @@ class _SensorLocationPageState extends State<SensorLocationPage> {
 
   Widget card({indice, constraints}) {
     return Positioned(
-      top: constraints.maxHeight * 0.65,
+      top: constraints.maxHeight * 0.61,
       child: ClipRRect(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
@@ -181,14 +181,14 @@ class _SensorLocationPageState extends State<SensorLocationPage> {
           child: Center(
               child: Column(
             children: [
-              Container(height: 20),
+              Container(height: 10),
               Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(left: 16, right: 16),
                 child: Row(
                   children: [
                     Container(
                       height: 50,
-                      width: 185,
+                      width: 155,
                       color: Colors.white,
                       child: Card(
                         shape: RoundedRectangleBorder(
@@ -211,7 +211,7 @@ class _SensorLocationPageState extends State<SensorLocationPage> {
                     ),
                     Container(
                       height: 50,
-                      width: 185,
+                      width: 155,
                       color: Colors.white,
                       child: Card(
                         shape: RoundedRectangleBorder(
@@ -237,12 +237,12 @@ class _SensorLocationPageState extends State<SensorLocationPage> {
               ),
               SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(left: 16, right: 16),
                 child: Row(
                   children: [
                     Container(
                       height: 50,
-                      width: 185,
+                      width: 155,
                       color: Colors.white,
                       child: Card(
                         shape: RoundedRectangleBorder(
@@ -269,7 +269,7 @@ class _SensorLocationPageState extends State<SensorLocationPage> {
                     ),
                     Container(
                       height: 50,
-                      width: 185,
+                      width: 155,
                       color: Colors.white,
                       child: Card(
                         shape: RoundedRectangleBorder(
