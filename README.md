@@ -18,6 +18,9 @@ $ cd AppUrbanoWare
 ### No terminal execute o seguinte comando
 $ flutter pub get
 
+### Com um emulador ou dispositivo Android conectado execute o seguinte comando
+$ flutter run
+
 ### Na tela de login utilizar o seguinte email e senha
 email: user@user.com
 senha: 102030.
