@@ -61,7 +61,6 @@ abstract class _AuthControllerBase with Store {
         ),
       );
       autoLogout();
-      //notifyListeners();
     }
     print(json.decode(response.body));
     print(userId);

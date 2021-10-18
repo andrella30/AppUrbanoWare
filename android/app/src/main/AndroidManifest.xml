@@ -10,9 +10,9 @@
         android:label="UrbanoWareCity_app"
         android:icon="@mipmap/ic_launcher">
 
+
         <meta-data android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyCKbbFkdU8ltolLBF_H8BIoQAto1GFzcx0"/>
-      
+        android:value="ID GOOGLE SERVICE"/>     
         
         <activity
             android:name=".MainActivity"
