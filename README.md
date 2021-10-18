@@ -7,6 +7,11 @@ O sistema é composto por dispositivos de borda com quatro sensores acoplados, r
 O sistema de hardware se encontra em https://github.com/andrella30/UrbanoWareHardwareSetup
 
 # UrbanoWareCity App
+- Gerência de Estado: Mobx
+- Gerência de instancias utilizando a biblioteca GetIt.
+- Consumo de API Firebase
+- Uso do Google Maps
+- Autenticação por Email/Senha Firebase
 
 Aplicativo desenvolvido para cidades inteligentes que permite os usuários obterem informações sobre índices de conforto urbano por meio de nós sensores sem fio e outros elementos de IoT espalhados pela cidade, habilitando a coleta de diversos parâmetros.
 
